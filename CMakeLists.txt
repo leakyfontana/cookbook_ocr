@@ -10,6 +10,9 @@ pkg_check_modules(tesseract REQUIRED IMPORTED_TARGET tesseract)
 pkg_check_modules(leptonica REQUIRED IMPORTED_TARGET lept)
 pkg_check_moduleS(libcurl REQUIRED IMPORTED_TARGET libcurl)
 
+# Add /usr/local/include to the include directories
+include_directories(/usr/local/include)
+
 set_property(TARGET PkgConfig::tesseract APPEND PROPERTY INTERFACE_LINK_LIBRARIES curl)
 
 # Add executable
